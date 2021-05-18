@@ -1,6 +1,9 @@
 # SJ Progress Bar
 A fully dynamic progress bar for Angular applications.
 
+![](https://github.com/shiljith/sj-demo-application/blob/dev/src/assets/sj-progress-bar.PNG?raw=true)
+
+
 ## Installation
 ```sh
 npm install sj-progress-bar --save
