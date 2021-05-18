@@ -1,27 +1,49 @@
-# LibApp
+## SJ Progress Bar
+A fully dynamic progress bar for Angular applications.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+## Installation
+npm install sj-progress-bar --save
+Usage
+Import the SJProgressBarModule.
 
-## Development server
+import { SJProgressBarModule } from 'sj-progress-bar';
+@NgModule({
+  imports: [
+    ...
+    SJProgressBarModule
+  ]
+  ...
+})
+export class AppModule { }
+Include sj-progress-bar in your component html file.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<sj-progress-bar></sj-progress-bar>
+Customize the the sj-progress-bar for your application
 
-## Code scaffolding
+You can use the following properties to customize the sj-progress-bar component in your template:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+value - The value of progress bar. Default value is 0.
+color - The color of progress bar. Default is green (#2bc253). You can give any color of your choice.
+stripes - The flag helps hide and show the animation progress of progress bar. Default value is false.
+showPercentage - The flag helps hide and show the percentage value of progress bar. Default value is false.
+percentagePosition - The percentagePosition value of the progress bar. This only works when the showPercentage flag is true. Default value is left. Two values left and right
+Example:
 
-## Build
+<sj-progress-bar 
+            [value]="100" 
+            [stripes]="true" 
+            color="blue" 
+            [showPercentage]="true"
+            percentagePosition="left"
+></sj-progress-bar>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Demo
+Simple examples using sj-progress-bar:
 
-## Running unit tests
+Online demo available here
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Author
+Shiljith Mp (Angular Developer)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+MIT
