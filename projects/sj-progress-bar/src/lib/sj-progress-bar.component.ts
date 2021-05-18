@@ -7,7 +7,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class SjProgressBarComponent implements OnInit, OnChanges {
   @Input('value') width: number = 0;
-  @Input('color') color: string = 'blue';
+  @Input('color') color: string = '#1976d2';
   @Input('stripes') stripes: boolean = false;
   @Input('showPercentage') showPercentage: boolean = false;
   @Input('percentagePosition') percentagePosition: string = 'center';
