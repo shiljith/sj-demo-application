@@ -1,0 +1,59 @@
+<div class="demo-container">
+    <h2>SJ Progress Bar Demo</h2>
+    
+    <div class="panel">
+        <div class="left-panel">
+            <div class="actions">
+                <h3>Options</h3>
+                
+                <h4>Value</h4>
+                <button class="btn" (click)="incrementValue()">Increment +</button>
+                <button class="btn" (click)="decrementValue()">Decrement -</button>
+                <h4>Stripes</h4>
+                <button class="btn" (click)="isStripes = !isStripes">{{(isStripes)? 'Disable' : 'Enable'}}</button>
+                
+                <h4>Color</h4>
+                <input class="form-control" #inputColor type="text" placeholder="Eg:- blue, #1976d2" [value]="color">
+                <button class="btn" (click)="color = inputColor.value">Set</button>
+
+                <h4>Percentage</h4>
+                <button class="btn" (click)="isShowPercentage = !isShowPercentage">{{(isShowPercentage)? 'Hide' : 'Show'}}</button>
+                
+                <select [disabled]="!isShowPercentage" class="form-control" name="position" id="position" (change)="onPositionChange($event.target)">
+                    <option *ngFor="let position of positions" [selected]="position === percentagePosition" [value]="position">{{position | titlecase}}</option>
+                </select>
+                <select [disabled]="!isShowPercentage" class="form-control" name="position" id="position" (change)="onPercentageColorChange($event.target)">
+                    <option *ngFor="let position of percentageColors" [selected]="position === percentagePosition" [value]="position">{{position | titlecase}}</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="right-panel">
+            <div class="code">
+                <h3>Code Generator</h3>
+                <code>
+                    &lt;sj-progress-bar
+                    [value] = "{{progressvalue}}"
+                    [stripes]= "{{isStripes}}"
+                    [showPercentage]="{{isShowPercentage}}"
+                    [color]="{{color}}"
+                    [percentagePosition]="{{percentagePosition}}"
+                    [percentageColor]="{{percentageColor}}"&gt;
+                    &lt;/sj-progress-bar&gt;
+                </code>
+            </div>
+            <div class="progress-bar-container">
+                <h3>Sample</h3>
+                <sj-progress-bar
+                    [value]="progressvalue"
+                    [stripes]="isStripes" 
+                    [color]="color" 
+                    [showPercentage]="isShowPercentage"
+                    [percentagePosition]="percentagePosition"
+                    [percentageColor]="percentageColor"
+                ></sj-progress-bar>
+            </div>
+        </div>
+    </div>
+</div>
+

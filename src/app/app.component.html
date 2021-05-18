@@ -1,0 +1,27 @@
+<header>
+  <div class="toolbar">
+    <div class="logo">
+      <a routerLink="/">SJ Demo Application</a>
+    </div>
+    <div class="author">
+      Author: SHILJITH MP
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <h1>Welcome to SJ Libraries</h1>
+
+    <div class="projects">
+      <div class="card" routerLink="sj-progress-bar">
+        <div class="card-header">SJ - Progress bar</div>
+        <div class="card-body">
+          A fully dynamic progress bar for Angular applications.
+        </div>
+      </div>
+    </div>
+    <div class="library">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

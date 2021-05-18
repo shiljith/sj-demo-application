@@ -1,0 +1,29 @@
+<div 
+    class="sj-progress-bar-container"
+    [ngClass]="{
+        'p-p-right': percentagePosition==='right',
+        'p-p-center': percentagePosition==='center'
+    }">
+        
+    <div
+        *ngIf="showPercentage"
+        class="show-percentage" 
+        [ngClass]="{
+            'darker': percentageColor === 'dark',
+            'lighter': percentageColor === 'light'
+        }"> 
+        
+        {{width}}%
+    </div>
+    <div 
+        class="sj-progress-bar"
+        [class.stripes]="stripes">
+
+        <span 
+            [style.background-color]="color"
+            [style.width]="width + '%' "></span> 
+    </div>
+</div>
+<div *ngIf="error" class="error">
+    You can only set value between 0-100.
+</div>
